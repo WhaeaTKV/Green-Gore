@@ -1,3 +1,49 @@
-[gd_scene format=3 uid="uid://bq1egxxc24wb7"]
+[gd_scene load_steps=6 format=4 uid="uid://bq1egxxc24wb7"]
+
+[ext_resource type="PackedScene" uid="uid://c4ltjitw7y40k" path="res://scenes/player.tscn" id="1_24nvm"]
+[ext_resource type="Texture2D" uid="uid://dluw6amk0le2q" path="res://assets/Environments/Hospital_Enviro.png" id="2_0watt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5s2o3"]
+resource_name = "Hospital_Enviro"
+texture = ExtResource("2_0watt")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_06g8y"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_5s2o3")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_24nvm"]
 
 [node name="MAIN_Level_01" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+////AAABAAEAAAD/////AAAAAAIAAAAAAP//AAAAAAEAAAABAP//AAADAAEAAAACAP//AAAAAAEAAAADAP//AAABAAEAAAD8////AAAAAAEAAAD7////AAABAAIAAAD6////AAACAAEAAAD5////AAAAAAEAAAD9////AAAAAAEAAAAFAP//AAAAAAEAAAAEAP//AAACAAEAAAAGAP//AAAAAAEAAAAHAP//AAAAAAEAAAAIAP//AAAAAAEAAAD4////AAABAAEAAAAJAP//AAABAAEAAAAKAP//AAAAAAEAAAD3////AAAAAAEAAAD7/wAAAAACAAIAAAD8/wAAAAADAAIAAAD9/wAAAAADAAIAAAD+/wAAAAADAAIAAAD//wAAAAAEAAEAAAAAAAAAAAAEAAEAAAABAAAAAAAEAAEAAAACAAAAAAAEAAEAAAADAAAAAAAEAAEAAAAEAAAAAAAEAAEAAAD6/wAAAAAEAAEAAAD5/wAAAAAEAAEAAAD4/wAAAAAEAAEAAAD3/wAAAAAEAAEAAAAFAAAAAAAEAAEAAAAGAAAAAAAEAAEAAAAHAAAAAAAEAAEAAAAIAAAAAAAEAAEAAAAJAAAAAAAEAAEAAAAKAAAAAAAEAAEAAAD3//7/AAAEAAIAAAD4//7/AAAEAAIAAAD5//7/AAAEAAIAAAD6//7/AAAEAAIAAAD7//7/AAAEAAIAAAD8//7/AAAEAAIAAAD9//7/AAAEAAIAAAD+//7/AAAEAAIAAAD///7/AAAEAAIAAAAAAP7/AAAEAAIAAAABAP7/AAAEAAIAAAACAP7/AAAEAAIAAAADAP7/AAAEAAIAAAAEAP7/AAAEAAIAAAAFAP7/AAAEAAIAAAAGAP7/AAAEAAIAAAAHAP7/AAAEAAIAAAAIAP7/AAAEAAIAAAAJAP7/AAAEAAIAAAAKAP7/AAAEAAIAAAA=")
+tile_set = SubResource("TileSet_06g8y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2)
+shape = SubResource("WorldBoundaryShape2D_24nvm")
+
+[node name="Player" parent="." instance=ExtResource("1_24nvm")]
+position = Vector2(1, 0)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-1, -41)
+zoom = Vector2(7, 7)

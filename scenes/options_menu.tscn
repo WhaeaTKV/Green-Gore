@@ -38,7 +38,7 @@ text = "Return to Main Menu"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_volume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Return" to="." method="_on_back_pressed"]
