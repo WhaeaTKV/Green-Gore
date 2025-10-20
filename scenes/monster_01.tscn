@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv0k7vwctenk7"]
+
+[ext_resource type="Texture2D" uid="uid://cwfy00difwflm" path="res://assets/Characters/Main-Characters.png" id="1_mpmwd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smadv"]
+atlas = ExtResource("1_mpmwd")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsnfp"]
+atlas = ExtResource("1_mpmwd")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vujt1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smadv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsnfp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w3uvr"]
+radius = 4.99387
+height = 41.9992
+
+[node name="monster_01" type="CharacterBody2D"]
+position = Vector2(2, -16)
+scale = Vector2(1.4, 1.4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vujt1")
+autoplay = "default"
+frame_progress = 0.788009
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 6)
+rotation = -1.56476
+shape = SubResource("CapsuleShape2D_w3uvr")

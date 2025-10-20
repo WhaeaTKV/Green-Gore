@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://bq1egxxc24wb7"]
+[gd_scene load_steps=9 format=4 uid="uid://bq1egxxc24wb7"]
 
 [ext_resource type="PackedScene" uid="uid://c4ltjitw7y40k" path="res://scenes/player.tscn" id="1_24nvm"]
 [ext_resource type="Texture2D" uid="uid://dluw6amk0le2q" path="res://assets/Environments/Hospital_Enviro.png" id="2_0watt"]
+[ext_resource type="PackedScene" uid="uid://chtcod65438h8" path="res://scenes/key.tscn" id="3_5s2o3"]
+[ext_resource type="PackedScene" uid="uid://bv0k7vwctenk7" path="res://scenes/monster_01.tscn" id="4_g3wjq"]
+[ext_resource type="PackedScene" uid="uid://c6ic3qgi54gey" path="res://scenes/monster_02.tscn" id="5_q0rp1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5s2o3"]
 resource_name = "Hospital_Enviro"
@@ -47,3 +50,14 @@ position = Vector2(1, 0)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, -41)
 zoom = Vector2(7, 7)
+position_smoothing_enabled = true
+
+[node name="Key" parent="." instance=ExtResource("3_5s2o3")]
+position = Vector2(528, -7)
+scale = Vector2(1.68376, 1.68376)
+
+[node name="monster_01" parent="." instance=ExtResource("4_g3wjq")]
+position = Vector2(638, -10)
+
+[node name="monster_02" parent="." instance=ExtResource("5_q0rp1")]
+position = Vector2(-400, -28)
