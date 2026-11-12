@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cf0haqf88jj0u"]
+[gd_scene format=3 uid="uid://cf0haqf88jj0u"]
 
 [ext_resource type="Script" uid="uid://dl66qi3porvc4" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 
-[node name="MAIN_MENU" type="Control"]
+[node name="MAIN_MENU" type="Control" unique_id=288183988]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,23 +11,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2065746240]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1903248003]
 layout_mode = 2
 
-[node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer" unique_id=561978555]
 layout_mode = 2
 text = "Start"
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer" unique_id=184624917]
 layout_mode = 2
 text = "Options"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1340452470]
 layout_mode = 2
 text = "Quit"
 
